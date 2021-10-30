@@ -42,7 +42,7 @@ public class DetailActivity extends AppCompatActivity {
         DataBaseAccess dataBaseAccess = DataBaseAccess.getInstance(DetailActivity.this);
         dataBaseAccess.open();
 
-        Cursor data = dataBaseAccess.Get("money");
+        Cursor data = dataBaseAccess.Get("tb_bukukas");
 
         if(data.getCount() == 0){
             Toast.makeText(DetailActivity.this, "No Data", Toast.LENGTH_SHORT).show();

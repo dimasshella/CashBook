@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
                     DataBaseAccess dataBaseAccess = DataBaseAccess.getInstance(LoginActivity.this);
                     dataBaseAccess.open();
 
-                    Cursor data = dataBaseAccess.Where("user", "username = '" + username.getText().toString().toUpperCase() + "' AND password = '" + password.getText().toString() + "'");
+                    Cursor data = dataBaseAccess.Where("tb_login", "username = '" + username.getText().toString().toUpperCase() + "' AND password = '" + password.getText().toString() + "'");
 
                     if(data.getCount() == 0){
                         Toast.makeText(LoginActivity.this, "Username atau Password Salah", Toast.LENGTH_SHORT).show();
@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         DataBaseAccess dataBaseAccess = DataBaseAccess.getInstance(LoginActivity.this);
         dataBaseAccess.open();
 
-        Cursor data = dataBaseAccess.Get("user");
+        Cursor data = dataBaseAccess.Get("tb_login");
 
         if(data.getCount() == 0){
             boolean isInserted = dataBaseAccess.insertUser("USER", "user");

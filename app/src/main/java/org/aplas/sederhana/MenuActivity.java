@@ -70,7 +70,7 @@ public class MenuActivity extends AppCompatActivity {
         DataBaseAccess dataBaseAccess = DataBaseAccess.getInstance(MenuActivity.this);
         dataBaseAccess.open();
 
-        Cursor data = dataBaseAccess.Sum("jumlah", "money", "flow = 'income'");
+        Cursor data = dataBaseAccess.Sum("jumlah", "tb_bukukas", "flow = 'income'");
 
         if(data.getCount() == 0){
             pemasukkan.setText("Pemasukkan : Rp. 0.-");
@@ -89,7 +89,7 @@ public class MenuActivity extends AppCompatActivity {
         DataBaseAccess dataBaseAccess = DataBaseAccess.getInstance(MenuActivity.this);
         dataBaseAccess.open();
 
-        Cursor data = dataBaseAccess.Sum("jumlah", "money", "flow = 'outcome'");
+        Cursor data = dataBaseAccess.Sum("jumlah", "tb_bukukas", "flow = 'outcome'");
 
         if(data.getCount() == 0){
             pengeluaran.setText("Pengeluaran : Rp. 0.-");

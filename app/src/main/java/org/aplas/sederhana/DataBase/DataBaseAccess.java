@@ -69,14 +69,14 @@ public class DataBaseAccess {
         ContentValues contentValues = new ContentValues();
         contentValues.put("username", username);
         contentValues.put("password", password);
-        long result = db.insert("user", null, contentValues);
+        long result = db.insert("tb_login", null, contentValues);
         return result != -1;
     }
 
     public boolean updateUser(String password, String username){
         ContentValues contentValues = new ContentValues();
         contentValues.put("password", password);
-        long result = db.update("user",  contentValues, "username=?", new String[]{username});
+        long result = db.update("tb_login",  contentValues, "username=?", new String[]{username});
         return result != -1;
     }
 
@@ -86,7 +86,7 @@ public class DataBaseAccess {
         contentValues.put("keterangan", keterangan);
         contentValues.put("createddate", tanggal);
         contentValues.put("flow", flow);
-        long result = db.insert("money", null, contentValues);
+        long result = db.insert("tb_bukukas", null, contentValues);
         return result != -1;
     }
 }

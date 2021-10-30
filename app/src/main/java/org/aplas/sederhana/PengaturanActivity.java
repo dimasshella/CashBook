@@ -34,7 +34,7 @@ public class PengaturanActivity extends AppCompatActivity {
                 DataBaseAccess dataBaseAccess = DataBaseAccess.getInstance(PengaturanActivity.this);
                 dataBaseAccess.open();
 
-                Cursor data = dataBaseAccess.Where("user", "username = 'USER' AND password ='" + oldpass.getText().toString() + "'");
+                Cursor data = dataBaseAccess.Where("tb_login", "username = 'USER' AND password ='" + oldpass.getText().toString() + "'");
 
                     if (data.getCount() == 0) {
                         Toast.makeText(PengaturanActivity.this, "Password Lama yang Anda Masukkan Salah", Toast.LENGTH_SHORT).show();
